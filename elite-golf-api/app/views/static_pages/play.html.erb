@@ -1,0 +1,36 @@
+<h1>Golf Now,  <%= @name %></h1>
+<a href="/log_in">Not my name!</a>
+<div id="golf-game"></div>
+<table class='champions-table'>
+  <tr>
+    <table>
+      <tr>
+        <td> Champion </td>
+        <td > Score </td>
+        <td> Time </td>
+      </tr>
+      <% @champions.each do |champion| %>
+        <tr>
+          <td><%= champion.name %></td>
+          <%= par_data champion.score %>
+          <td><%= champion.created_at %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</table>
+
+<script>
+  var $el = $('#golf-game');
+  var gameOverCallback = function(results){
+    var score = results.score;
+    var par = results.par;
+    $.ajax({
+      url: '/api/high_scores',
+      method: 'post',
+      data: { high_score: { score: results.score } }
+    });
+  };
+  var game = new EliteGolf($el, gameOverCallback);
+  game.run();
+</script>

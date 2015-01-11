@@ -11,14 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102155935) do
+ActiveRecord::Schema.define(version: 20150111213546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "course_maps", force: :cascade do |t|
+    t.integer  "map_id",     null: false
+    t.integer  "course_id",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "course_maps", ["course_id"], name: "index_course_maps_on_course_id", using: :btree
+  add_index "course_maps", ["map_id"], name: "index_course_maps_on_map_id", using: :btree
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "high_scores", force: :cascade do |t|
     t.string   "name",       null: false
     t.integer  "score",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "maps", force: :cascade do |t|
+    t.integer  "par",        null: false
+    t.json     "data",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

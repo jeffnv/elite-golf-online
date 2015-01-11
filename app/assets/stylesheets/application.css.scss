@@ -1,0 +1,29 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.golf-content{
+  padding: 20px;
+}
+#golf-game{
+  display: inline-block;
+  width: 510px;
+}
+.score-table{
+  display: inline-block;
+  min-width: 200px;
+  vertical-align: top;
+}
+.game-canvas {
+  border: 1px solid #ddd;
+}
+.score-over {
+  color: red;
+}
+
+.score-par {
+  color: blue;
+}
+
+.score-under {
+  color: green;
+}

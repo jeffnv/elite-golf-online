@@ -1,13 +1,12 @@
-<h1>Golf Now,  <%= @name %></h1> <a href="/log_in"><%= @name %> is not my name!</a>
-<h3>How to Play</h3>
-<p>Click and drag from anywhere on the course to hit the ball. You do 
-not need to start your drag from the ball.</p>
-<div id="golf-game"></div>
-<table class='champions-table'>
-  <tr>
-    <table>
+<div class="golf-content">
+  <h1>Golf Now,  <%= @name %></h1> 
+  <a href="/log_in"><%= @name %> is not my name!</a>
+  <br>
+  <div id="golf-game"></div>
+  <div class="score-table">
+    <table class='table-condensed table-striped table-hover table-bordered'>
       <tr>
-        <td> Champion </td>
+        <td> Golfer </td>
         <td > Score </td>
         <td> Time </td>
       </tr>
@@ -15,12 +14,15 @@ not need to start your drag from the ball.</p>
         <tr>
           <td><%= champion.name %></td>
           <%= par_data champion.score %>
-          <td><%= champion.created_at %></td>
+          <td><%= time_ago_in_words(champion.created_at) %></td>
         </tr>
       <% end %>
     </table>
   </div>
-</table>
+  <h3>How to Play</h3>
+  <p>Click and drag from anywhere on the course to hit the ball. You do 
+  not need to start your drag from the ball.</p>
+</div>
 
 <script>
   var $el = $('#golf-game');

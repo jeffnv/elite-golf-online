@@ -10,4 +10,6 @@
 
 class Course < ActiveRecord::Base
   validates :name, :presence => true
+  has_many :course_maps
+  has_many :maps, through: :course_maps, source: :map
 end

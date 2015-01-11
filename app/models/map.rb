@@ -11,4 +11,6 @@
 
 class Map < ActiveRecord::Base
   validates :par, :data, presence: true
+  has_many :course_maps
+  has_many :courses, through: :course_maps, source: :course
 end

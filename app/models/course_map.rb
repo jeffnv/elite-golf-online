@@ -10,7 +10,8 @@
 #
 
 class CourseMap < ActiveRecord::Base
-  validates :map_id, :course_id, :presence => true
+  validates :map_id, :presence => true
+  validates :course, :presence => true
   belongs_to :map
   belongs_to :course
 end

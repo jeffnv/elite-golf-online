@@ -36,6 +36,9 @@
     });
     alert('score: ' + score + " par: " + par);
   };
-  var game = new EliteGolf($el, gameOverCallback);
-  game.run();
+  MAPS = <%= Course.last.maps.pluck(:data).to_json.html_safe %>
+  $(function(){
+    var game = new EliteGolf($el, gameOverCallback);
+    game.run();
+  });
 </script>

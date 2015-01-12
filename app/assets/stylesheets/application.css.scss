@@ -1,6 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.log-in-form{
+  max-width: 400px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
 .golf-content{
   padding: 20px;
 }
@@ -26,4 +31,7 @@
 
 .score-under {
   color: green;
+}
+body {
+  background-color: #EEFFE1;
 }

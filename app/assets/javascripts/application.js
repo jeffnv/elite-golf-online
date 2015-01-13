@@ -13,7 +13,6 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
 //= require underscore
 //= require backbone
 //= require elite_golf_app

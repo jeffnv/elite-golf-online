@@ -4,7 +4,18 @@ EliteGolfApp.Routers.GolfRouter = Backbone.Router.extend({
         this.courses = new EliteGolfApp.Collections.Courses();
     },
     routes: {
-        '': 'courses'
+        '': 'courses',
+        "courses/:id": 'coursesShow'
+    },
+    coursesShow: function(id) {
+        var model = new EliteGolfApp.Models.Course({
+            id: id
+        });
+        var view = new EliteGolfApp.Views.CoursesShow({
+            model: model
+        });
+        model.fetch();
+        this.swapView(view);
     },
     courses: function() {
         var view = new EliteGolfApp.Views.CoursesIndex({

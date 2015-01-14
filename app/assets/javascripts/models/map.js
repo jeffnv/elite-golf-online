@@ -1,1 +1,3 @@
-EliteGolfApp.Models.Map = Backbone.Model.extend({});
+EliteGolfApp.Models.Map = Backbone.Model.extend({
+  urlRoot: "api/maps"
+});

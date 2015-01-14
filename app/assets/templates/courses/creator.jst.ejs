@@ -1,0 +1,20 @@
+<h3>Course Creator!</h3>
+
+<form class='course-form'>
+<div class="form-group">
+  <label for="">Course Name</label>
+  <input type="text" name="name" class="form-control course-name" placeholder="map name" />
+</div>
+
+<% maps.each(function(map){ %>
+<div class="checkbox">
+  <label>Name: <%= map.escape('name') || "unnamed" %>, Par: <%=
+    map.escape('par') %>
+    <input type="checkbox" name="map_ids[]" value="<%= map.id %>">
+  </label>
+</div>
+
+<% }) %>
+  <input type="submit" name="" id="" value="Create Course" />
+  
+</form>

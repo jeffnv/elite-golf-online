@@ -10,9 +10,21 @@ EliteGolfApp.Views.MapCreator = Backbone.View.extend({
             this.$('.map-creator'),
             this.publishMap.bind(this)
         )
-          mapCreator.run();
+        mapCreator.run();
     },
     publishMap: function(data) {
-        debugger;
+        var newMap = new EliteGolfApp.Models.Map({
+            data: data.mapJSON,
+            par: data.par,
+            name: this.$('.map-name').val()
+        });
+        newMap.save({}, {
+            success: function(resp) {
+                debugger
+            },
+            error: function(resp) {
+                debugger
+            }
+        });
     }
 });

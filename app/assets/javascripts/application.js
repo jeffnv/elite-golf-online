@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery.serializejson.min
 //= require underscore
 //= require backbone
 //= require elite_golf_app

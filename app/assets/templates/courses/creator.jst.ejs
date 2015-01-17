@@ -8,9 +8,10 @@
 
 <% maps.each(function(map){ %>
 <div class="checkbox">
-  <label>Name: <%= map.escape('name') || "unnamed" %>, Par: <%=
-    map.escape('par') %>
+  <label>
     <input type="checkbox" name="map_ids[]" value="<%= map.id %>">
+    <%= map.escape('name') || "unnamed" %>, Par: <%=
+    map.escape('par') %>
   </label>
 </div>
 

@@ -40,6 +40,7 @@ Course.create!(name: 'Just the Hard Ones', maps: Map.last(3))
 Course.first.high_scores.create(:name => 'Jeff', :score => 27)
 Course.first.high_scores.create(:name => 'Ryan', :score => 27)
 Course.first.high_scores.create(:name => 'matt', :score => 26)
+Course.first.high_scores.create(:name => 'shawnasty', :score => 34)
 Course.first.high_scores.create(:name => 'Ryan', :score => 23)
 # Course.all.each do |course|
 #   (2 + (rand * 20).floor).times do 

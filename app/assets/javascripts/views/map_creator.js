@@ -20,10 +20,7 @@ EliteGolfApp.Views.MapCreator = Backbone.View.extend({
         });
         newMap.save({}, {
             success: function(resp) {
-                debugger
-            },
-            error: function(resp) {
-                debugger
+              Backbone.history.navigate('#/course_creator'); 
             }
         });
     }

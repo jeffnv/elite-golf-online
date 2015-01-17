@@ -6,6 +6,7 @@ gem 'rails', '4.2.0'
 gem 'rails_12factor'
 gem 'annotate'
 gem 'backbone-on-rails'
+gem 'faker'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets

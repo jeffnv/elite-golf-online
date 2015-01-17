@@ -1,1 +1,25 @@
-<a href="#/courses/<%=course.id%>"><%= course.escape('name') %></a>
+<div class="course-data-name">
+  <a href="#/courses/<%=course.id%>">
+    <%= course.escape('name') %>
+  </a>
+</div>
+
+<% var holes = course.get('hole_count'), par = course.get('par') %>
+<div class="course-data-row">
+  <div class="course-data-item-half left">Holes: <%= holes %></div>
+  <div class="course-data-item-half right">Par: <%= par %></div>
+</div>
+<div class="course-data-row">
+  <div class="course-data-item-half left">
+    Average Par: <%= (par/holes).toFixed(1) %>
+  </div>
+  <div class="course-data-item-half right">
+    Play Count: <%= course.get('play_count') %>
+  </div>
+</div>
+<div class="course-data-row champion">
+  <div class="course-data-item-half left">
+    Champion: <%= course.highestScore().get('name') %>
+  </div>
+  <div class="course-data-item-half right">Score: <%= course.highestScore().get('score') %></div>
+</div>

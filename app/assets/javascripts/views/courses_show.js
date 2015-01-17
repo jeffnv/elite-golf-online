@@ -11,11 +11,23 @@ EliteGolfApp.Views.CoursesShow = Backbone.View.extend({
     },
     startGolfing: function() {
         this.render();
-        var gameOverCallback = function(results) {
-            alert('score: ' + results.score + " par: " + results.par);
-        };
         MAPS = this.model.maps().pluck('data');
-        var game = new EliteGolf(this.$('.golf-game'), gameOverCallback);
+        var game = new EliteGolf(this.$('.golf-game'), this.gameOver.bind(this));
         game.run();
     },
+    gameOver: function(results) {
+        var that = this;
+        var newScore = new EliteGolfApp.Models.HighScore({
+            score: results.score,
+            course_id: this.model.id
+        });
+        newScore.save({}, {
+            success: function(model) {
+                that.model.highScores().add(newScore);
+                //that.model.highScores().sort();
+                that.render();
+                that.startGolfing();
+            }
+        });
+    }
 });

@@ -1,16 +1,22 @@
 EliteGolfApp.Routers.GolfRouter = Backbone.Router.extend({
     initialize: function(options) {
         this.$root = options.$root;
-        this.courses = new EliteGolfApp.Collections.Courses();
+        window.courses = this.courses = new EliteGolfApp.Collections.Courses();
         this.maps = new EliteGolfApp.Collections.Maps();
     },
     routes: {
-        '': 'courses',
+        '': 'home',
         'courses': 'courses',
         "courses/:id": 'coursesShow',
         'map_creator': 'mapCreator',
         'course_creator': 'courseCreator',
-
+    },
+    home: function() {
+        var view = new EliteGolfApp.Views.Home({
+            collection: this.courses
+        });
+        this.swapView(view);
+        this.courses.fetch({data: {list_type: 'top_5'}});
     },
     courseCreator: function() {
         var view = new EliteGolfApp.Views.CoursesCreator({

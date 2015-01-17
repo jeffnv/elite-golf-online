@@ -37,3 +37,14 @@ maps.each {|data| Map.create!(data: JSON.parse(data[:dataJSON]), par: data[:par]
 Course.create!(name: 'Classics', maps: Map.last(9))
 Course.create!(name: 'Classics Jr.', maps: Map.first(3))
 Course.create!(name: 'Just the Hard Ones', maps: Map.last(3))
+Course.first.high_scores.create(:name => 'Jeff', :score => 27)
+Course.first.high_scores.create(:name => 'Ryan', :score => 27)
+Course.first.high_scores.create(:name => 'matt', :score => 26)
+Course.first.high_scores.create(:name => 'Ryan', :score => 23)
+# Course.all.each do |course|
+#   (2 + (rand * 20).floor).times do 
+#     name = Faker::Name.first_name
+#     score = (rand * 50).floor + course.par
+#     course.high_scores.create(:name => name, :score => score);
+#   end
+# end

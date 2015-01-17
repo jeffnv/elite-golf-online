@@ -1,0 +1,53 @@
+#app-root{
+  margin-left: 40px;
+}
+.golf-game{
+  width: 510px;
+  display: inline-block;
+}
+
+.course-creator{
+  width: 500px;
+}
+.game-mode-space{
+  width: 500px;
+}
+.course-data{
+  border: 1px solid green;
+  width: 400px;
+  font-weight: bold;
+}
+.course-data-name{
+  font-size: xx-large;
+  display: block;
+  text-align: center;
+}
+.course-data:hover{
+  background-color: lightgreen;
+}
+.course-data-row {
+  border-top: 1px solid green;
+}
+.course-data-item-half{
+  display: inline-block;
+  width: 175px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.course-data-item-half.right{
+  text-align: right;
+}
+.course-data-item-half.left{
+  text-align: left;
+}
+
+.champion{
+  background-color: lightgold;
+}
+
+.course-data-item-whole{
+  text-align: center;
+  display: inline-block;
+  width: 100%
+}

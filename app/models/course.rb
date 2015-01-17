@@ -15,7 +15,7 @@ class Course < ActiveRecord::Base
   has_many :high_scores
   scope :popular, -> do
     select("DISTINCT courses.*, count(high_scores.id)").
-    joins(:high_scores).
+      joins('left outer join high_scores on high_scores.course_id = courses.id').
     group("courses.id").
     order("count(high_scores.id) DESC")
   end

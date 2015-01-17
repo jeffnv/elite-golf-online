@@ -1,6 +1,7 @@
 class Api::HighScoresController < ApplicationController
   def index
-    render :json => HighScore.all
+    @scores = HighScore.all
+    render :index
   end
 
   def create

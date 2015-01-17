@@ -17,9 +17,19 @@
     Play Count: <%= course.get('play_count') %>
   </div>
 </div>
+<% if(course.highestScore().id) { %>
 <div class="course-data-row champion">
   <div class="course-data-item-half left">
     Champion: <%= course.highestScore().get('name') %>
   </div>
-  <div class="course-data-item-half right">Score: <%= course.highestScore().get('score') %></div>
+  <div class="course-data-item-half right
+    <%= course.highestScore().get('score_class') %>">Score: <%=
+    course.highestScore().get('score_diff') %></div>
 </div>
+<% } else { %>
+<div class="course-data-row">
+  <div class="course-data-item-whole">
+    Be the first to log a score!
+  </div>
+</div>
+<% } %>

@@ -10,6 +10,7 @@
 
 class Course < ActiveRecord::Base
   validates :name, :presence => true
+  validate :must_have_maps
   has_many :course_maps
   has_many :maps, through: :course_maps, source: :map
   has_many :high_scores
@@ -18,6 +19,12 @@ class Course < ActiveRecord::Base
       joins('left outer join high_scores on high_scores.course_id = courses.id').
     group("courses.id").
     order("count(high_scores.id) DESC")
+  end
+
+  def must_have_maps
+    if(maps.empty?)
+      errors[:course] << "must have at least one map"
+    end
   end
 
   def par

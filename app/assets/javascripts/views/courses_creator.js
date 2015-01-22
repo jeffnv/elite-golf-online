@@ -11,10 +11,11 @@ EliteGolfApp.Views.CoursesCreator = Backbone.View.extend({
         var course = new EliteGolfApp.Models.Course();
         course.save(data, {
             success: function(resp) {
-                debugger
+              alert(course.escape('name') + ' created!');
+              Backbone.history.navigate('#/courses/' + course.id);
             },
             error: function(data, resp) {
-                debugger
+              alert(resp.responseJSON);
             },
         });
     },

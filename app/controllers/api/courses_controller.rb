@@ -25,7 +25,7 @@ class Api::CoursesController < ApplicationController
     if course.save
       render json: course
     else
-      render json: curse.errors.full_messages, status: 422
+      render json: course.errors.full_messages, status: 422
     end
   end
 

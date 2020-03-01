@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #
 
-class Course < ActiveRecord::Base
+class Course < ApplicationRecord
   validates :name, :presence => true
   validate :must_have_maps
   has_many :course_maps

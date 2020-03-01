@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,44 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115191807) do
+ActiveRecord::Schema.define(version: 2015_01_15_191807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "course_maps", force: :cascade do |t|
-    t.integer  "map_id",     null: false
-    t.integer  "course_id",  null: false
+  create_table "course_maps", id: :serial, force: :cascade do |t|
+    t.integer "map_id", null: false
+    t.integer "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_course_maps_on_course_id"
+    t.index ["map_id"], name: "index_course_maps_on_map_id"
+  end
+
+  create_table "courses", id: :serial, force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "course_maps", ["course_id"], name: "index_course_maps_on_course_id", using: :btree
-  add_index "course_maps", ["map_id"], name: "index_course_maps_on_map_id", using: :btree
-
-  create_table "courses", force: :cascade do |t|
-    t.string   "name",       null: false
+  create_table "high_scores", id: :serial, force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "score", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "course_id"
   end
 
-  create_table "high_scores", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.integer  "score",      null: false
+  create_table "maps", id: :serial, force: :cascade do |t|
+    t.integer "par", null: false
+    t.json "data", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.integer  "course_id"
+    t.string "name"
+    t.index ["name"], name: "index_maps_on_name"
   end
-
-  create_table "maps", force: :cascade do |t|
-    t.integer  "par",        null: false
-    t.json     "data",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "name"
-  end
-
-  add_index "maps", ["name"], name: "index_maps_on_name", using: :btree
 
 end

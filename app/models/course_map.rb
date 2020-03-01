@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class CourseMap < ActiveRecord::Base
+class CourseMap < ApplicationRecord
   validates :map_id, :presence => true
   validates :course, :presence => true
   belongs_to :map

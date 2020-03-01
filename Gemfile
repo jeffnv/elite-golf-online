@@ -6,16 +6,16 @@ gem 'rails', '~> 5.2.4'
 gem 'sass-rails', '5.1.0'
 gem 'coffee-rails', '~> 4.2.0'
 gem 'sprockets', '3.7.2'
+gem 'puma', "~> 4.3.3"
 # gem 'rails_12factor'
-# gem 'annotate'
+gem 'annotate'
 gem 'backbone-on-rails'
-# gem 'faker'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.17'
+gem 'pg', '~> 1.2.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.3.1'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -26,7 +26,7 @@ gem 'uglifier', '>= 1.3.0'
 # # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', "~> 2.10.0"
 # # bundle exec rake doc:rails generates the API under doc/api.
 # gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -42,18 +42,12 @@ gem 'jquery-rails'
 group :development, :test do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'faker', '~> 2.10.2'
+
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  # gem 'byebug', '~> 3.5'
-
-  # # Access an IRB console on exception pages or by using <%= console %> in views
-  # gem 'web-console', '~> 2.0'
-
-  # # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  # gem 'spring', '~> 1.2'
 end
 

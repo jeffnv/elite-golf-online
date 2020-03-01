@@ -11,7 +11,7 @@
 #  course_id  :integer
 #
 
-class HighScore < ActiveRecord::Base
+class HighScore < ApplicationRecord
   validates :name, :score,:course_id, presence: true
   validate :score_must_belong_to_user
 

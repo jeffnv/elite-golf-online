@@ -9,6 +9,7 @@ gem 'sprockets', '3.7.2'
 gem 'puma', "~> 4.3.3"
 # gem 'rails_12factor'
 gem 'annotate'
+gem 'webpacker', "~> 4.2.2"
 gem 'backbone-on-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.2.2'

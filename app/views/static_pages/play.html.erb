@@ -1,5 +1,5 @@
 <div class="golf-content">
-  <h1>Golf Now,  <%= @name %></h1> 
+  <h1>Golf Now,  <%= @name %></h1>
   <a href="/log_in"><%= @name %> is not my name!</a>
   <br>
   <div id="golf-game"></div>
@@ -21,9 +21,8 @@
   </div>
   <h3>How to Play</h3>
   <p>Click and drag from anywhere on the course to hit the ball. You do 
-  not need to start your drag from the ball.</p>
+    not need to start your drag from the ball.</p>
 </div>
-
 <script>
   var $el = $('#golf-game');
   var gameOverCallback = function(results){
@@ -38,7 +37,7 @@
   };
   MAPS = <%= Course.last.maps.pluck(:data).to_json.html_safe %>
   $(function(){
-    var game = new EliteGolf($el, gameOverCallback);
+    var game = new EliteGolf($el[0], gameOverCallback);
     game.run();
   });
 </script>

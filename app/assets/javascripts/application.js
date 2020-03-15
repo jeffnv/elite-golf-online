@@ -19,7 +19,6 @@
 //= require backbone
 //= require elite_golf_app
 //= require composite_view
-//= require_tree ./golf/base_classes
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
@@ -29,9 +28,9 @@
 //
 //
 //for the cheetahs
-setInterval(function(){console.log("(っ˘̩╭╮˘̩)っ plz don't cheat")}, 5000);
-setTimeout(function(){setInterval(function(){console.log("ಥ_ಥ c'mon, dawg")}, 5000)}, 1000);
-setTimeout(function(){setInterval(function(){console.log("(╯︵╰,) have some integrity")}, 5000)}, 2000);
-setTimeout(function(){setInterval(function(){console.log("(´･ ⌒ ･` ) your parents raised you better than this")}, 5000)}, 3000);
-setTimeout(function(){setInterval(function(){console.log("(T_T) all I wanted was for you to have a good time")}, 5000)}, 4000);
+setInterval(function () { console.log("(っ˘̩╭╮˘̩)っ plz don't cheat") }, 5000);
+setTimeout(function () { setInterval(function () { console.log("ಥ_ಥ c'mon, dawg") }, 5000) }, 1000);
+setTimeout(function () { setInterval(function () { console.log("(╯︵╰,) have some integrity") }, 5000) }, 2000);
+setTimeout(function () { setInterval(function () { console.log("(´･ ⌒ ･` ) your parents raised you better than this") }, 5000) }, 3000);
+setTimeout(function () { setInterval(function () { console.log("(T_T) all I wanted was for you to have a good time") }, 5000) }, 4000);
 

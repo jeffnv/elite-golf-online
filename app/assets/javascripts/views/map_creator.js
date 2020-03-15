@@ -1,26 +1,26 @@
 EliteGolfApp.Views.MapCreator = Backbone.View.extend({
     template: JST['maps/creator'],
-    render: function() {
+    render: function () {
         this.$el.html(this.template());
         this.createMap();
         return this;
     },
-    createMap: function() {
+    createMap: function () {
         var mapCreator = new EliteMapCreator(
-            this.$('.map-creator'),
+            this.$('.map-creator')[0],
             this.publishMap.bind(this)
         )
         mapCreator.run();
     },
-    publishMap: function(data) {
+    publishMap: function (data) {
         var newMap = new EliteGolfApp.Models.Map({
             data: data.mapJSON,
             par: data.par,
             name: this.$('.map-name').val()
         });
         newMap.save({}, {
-            success: function(resp) {
-              Backbone.history.navigate('#/course_creator'); 
+            success: function (resp) {
+                Backbone.history.navigate('#/course_creator');
             }
         });
     }

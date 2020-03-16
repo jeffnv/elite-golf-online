@@ -16,7 +16,9 @@ gem 'pg', '~> 1.2.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.3.7'
+# gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 4.4.1'
+
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

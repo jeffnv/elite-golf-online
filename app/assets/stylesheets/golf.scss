@@ -1,12 +1,12 @@
-#app-root{
+#app-root {
   margin-left: 40px;
 }
 
 .shadow {
-  box-shadow:         0px 0px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  box-shadow: 0px 0px 5px 6px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
-.inset { 
-  color: #939E8B;
+.inset {
+  color: #939e8b;
   text-shadow: #fff 0px 1px 0, #000 0 -1px 0;
 }
 
@@ -15,49 +15,50 @@
   display: inline-block;
 }
 
-.course-creator, .map-creator{
+.course-creator,
+.map-creator {
   width: 500px;
 }
-.game-mode-space{
+.game-mode-space {
   width: 500px;
 }
-.course-data{
+.course-data {
   border: 1px solid green;
   width: 400px;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-.course-data-name{
+.course-data-name {
   font-size: xx-large;
   display: block;
   text-align: center;
 }
-.course-data:hover{
+.course-data:hover {
   background-color: lightgreen;
 }
 .course-data-row {
   border-top: 1px solid green;
 }
-.course-data-item-half{
+.course-data-item-half {
   display: inline-block;
   width: 175px;
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.course-data-item-half.right{
+.course-data-item-half.right {
   text-align: right;
 }
-.course-data-item-half.left{
+.course-data-item-half.left {
   text-align: left;
 }
 
-.champion{
+.champion {
   background-color: lightgold;
 }
 
-.course-data-item-whole{
+.course-data-item-whole {
   text-align: center;
   display: inline-block;
-  width: 100%
+  width: 100%;
 }

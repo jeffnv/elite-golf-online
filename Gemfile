@@ -6,7 +6,7 @@ gem 'rails', '~> 5.2.4'
 gem 'sass-rails', '5.1.0'
 gem 'coffee-rails', '~> 4.2.0'
 gem 'sprockets', '3.7.2'
-gem 'puma', "~> 4.3.3"
+gem 'puma', "~> 4.3.5"
 # gem 'rails_12factor'
 gem 'annotate'
 gem 'webpacker', "~> 4.2.2"
